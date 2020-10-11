@@ -1,4 +1,4 @@
-package com.app.data
+package com.app.core.network
 
 import kotlinx.coroutines.flow.Flow
 import retrofit2.CallAdapter
@@ -21,14 +21,14 @@ class FlowCallAdapterFactory private constructor() : CallAdapter.Factory() {
         val rawFlowType = getRawType(responseType)
         return if (rawFlowType == Response::class.java) {
             check(responseType is ParameterizedType)
-            com.app.data.FlowCallAdapter<Any>(
+            FlowCallAdapter<Any>(
                 getParameterUpperBound(
                     0,
                     responseType
                 )
             )
         } else {
-            com.app.data.BodyCallAdapter<Any>(responseType)
+            BodyCallAdapter<Any>(responseType)
         }
     }
 

@@ -1,4 +1,4 @@
-package com.app.data
+package com.app.core.network
 
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
