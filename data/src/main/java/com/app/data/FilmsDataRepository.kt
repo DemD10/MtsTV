@@ -8,7 +8,9 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 
-class FilmsDataRepository(
+fun data(filmsApi: FilmsApi, appCache: AppCache): FilmsRepository = FilmsDataRepository(filmsApi, appCache)
+
+internal class FilmsDataRepository(
     private val filmsApi: FilmsApi,
     private val appCache: AppCache
 ) : FilmsRepository {

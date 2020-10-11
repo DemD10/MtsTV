@@ -10,7 +10,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
-class ApiModule(sharedPreferences: SharedPreferences): ApiComponent {
+fun api(sharedPreferences: SharedPreferences): ApiComponent = ApiModule(sharedPreferences)
+
+internal class ApiModule(sharedPreferences: SharedPreferences): ApiComponent {
 
     private val loggingInterceptor = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)
