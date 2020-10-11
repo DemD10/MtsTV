@@ -1,8 +1,6 @@
 package com.app.data
 
-import android.content.Context
 import android.content.SharedPreferences
-import com.squareup.moshi.JsonClass
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 

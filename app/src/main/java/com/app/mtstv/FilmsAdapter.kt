@@ -1,15 +1,12 @@
 package com.app.mtstv
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.domain.FilmDomain
 import com.app.mtstv.databinding.RcItemPosterBinding
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
 
 class FilmsAdapter : ListAdapter<FilmDomain, FilmsAdapter.FilmViewHolder>(FilmsDiffUtil) {
 
@@ -27,7 +24,8 @@ class FilmsAdapter : ListAdapter<FilmDomain, FilmsAdapter.FilmViewHolder>(FilmsD
         holder.bind(currentList[position])
     }
 
-    class FilmViewHolder(private val binding: RcItemPosterBinding) : RecyclerView.ViewHolder(binding.root) {
+    class FilmViewHolder(private val binding: RcItemPosterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(filmDomain: FilmDomain) {
             binding.posterAppCompatImageView.loadImageFromUrl(filmDomain.poster)

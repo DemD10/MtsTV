@@ -1,18 +1,15 @@
 package com.app.data
 
-import android.content.Context
 import android.content.SharedPreferences
 import com.squareup.moshi.Moshi
-import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 
 fun api(sharedPreferences: SharedPreferences): ApiComponent = ApiModule(sharedPreferences)
 
-internal class ApiModule(sharedPreferences: SharedPreferences): ApiComponent {
+internal class ApiModule(sharedPreferences: SharedPreferences) : ApiComponent {
 
     private val loggingInterceptor = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)

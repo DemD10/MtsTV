@@ -11,7 +11,8 @@ fun ImageView.loadImageFromUrl(url: String) {
         .load(url)
         .apply(
             RequestOptions()
-            .diskCacheStrategy(DiskCacheStrategy.ALL))
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+        )
         .transition(DrawableTransitionOptions().crossFade())
         .into(this)
 }

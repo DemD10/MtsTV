@@ -1,8 +1,5 @@
 package com.app.mtstv
 
-import android.content.Context
-import com.squareup.moshi.Moshi
-
 fun app() = AppComponent.instance
 
 interface AppComponent {

@@ -8,7 +8,8 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 
-fun data(filmsApi: FilmsApi, appCache: AppCache): FilmsRepository = FilmsDataRepository(filmsApi, appCache)
+fun data(filmsApi: FilmsApi, appCache: AppCache): FilmsRepository =
+    FilmsDataRepository(filmsApi, appCache)
 
 internal class FilmsDataRepository(
     private val filmsApi: FilmsApi,
@@ -16,11 +17,11 @@ internal class FilmsDataRepository(
 ) : FilmsRepository {
 
     override fun getFilms(): Flow<List<FilmDomain>> {
-        if(appCache.isExists()) {
+        if (appCache.isExists()) {
             return flow {
                 emit(
                     appCache.getFromCache().map {
-                        FilmDomain(it.id ,it.poster, it.year)
+                        FilmDomain(it.id, it.poster, it.year)
                     }
                 )
             }

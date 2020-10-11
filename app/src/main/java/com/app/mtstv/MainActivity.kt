@@ -4,7 +4,6 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import com.app.domain.FilmDomain
 import com.app.mtstv.databinding.ActivityMainBinding
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private val spanCount: Int
         get() {
-            return if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            return if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 SPAN_COUNT_LANDSCAPE
             } else {
                 SPAN_COUNT_PORTRAIT
